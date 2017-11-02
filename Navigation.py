@@ -101,6 +101,14 @@ x.add_building('University of illinois Extension/Mumford Hall','W Gregory Dr',('
 x.add_building('Carl R. Woese Institute for Genomic Biology','W Gregory Dr',('W Gregory Dr','S 6th St'),460,'W',('South Goodwin Ave','S Goodwin Ave'),100,'E')
 x.add_building('Freer Hall','W Gregory Dr',('South Goodwin Ave','S Goodwin Ave'),140,'W',('South Goodwin Ave','S Dorner Dr'),30,'E')
 x.add_building('Mckinley Health Center','S Lincoln Ave',('W Nevada St','S Lincoln Ave'),400,'N',('W Pennsylvania Ave','S Lincoln Ave'),200,'S')
+x.add_building('Foreign Language Building','W Mattews Ave',('W Nevada St','W Mattews Ave'),40,'S',('W Oregon St','W Mattews Ave'),70,'N')
+x.add_building('Davenport Hall','W Mattews Ave',('W Oregon St','W Mattews Ave'),25,'S',('W Illinois St','W Mattews Ave'),205,'N')
+x.add_building('School of Social Work','W Nevada St',('W Nevada St','S Gregory St'),40,'W',('W Nevada St','S Lincoln Ave'),160,'E')
+x.add_building('Spurlock Museum','S Gregory St',('W Oregon St','S Gregory St'),68,'S',('W Illinois St','S Gregory St'),162,'N')
+x.add_building('Institute of Government and public Affairs','W Nevada St',('W Nevada St','S Gregory St'),25,'W',('W Nevada St','S Lincoln Ave'),175,'E')
+x.add_building('Dance Studio','W Nevada St',('W Nevada St','S Gregory St'),70,'W',('W Nevada St','S Lincoln Ave'),130,'E')
+x.add_building('Huff Hall','E Gregory Dr',('E Gregory Dr','S 4th St'),20,'W',('E Gregory Dr','S 6th St'),250,'E')
+
 
 x.add_edge(('W Nevada St','W Mattews Ave'),('W Nevada St','S Goodwin Ave'),140,'E')
 x.add_edge(('W Nevada St','S Goodwin Ave'),('W Nevada St','S Gregory St'),200,'E')
@@ -127,12 +135,6 @@ x.add_edge(('W Nevada St','S Lincoln Ave'),('W Oregon St','S Lincoln Ave'),110,'
 x.add_edge(('W Oregon St','S Lincoln Ave'),('W Illinois St','S Lincoln Ave'),230,'N')
 
 #add_building(self,building: str,street,node_1,node_1_distance,node_1_direction,node_2,node_2_direction,node_2_distance):
-x.add_building('Foreign Language Building','W Mattews Ave',('W Nevada St','W Mattews Ave'),40,'S',('W Oregon St','W Mattews Ave'),70,'N')
-x.add_building('Davenport Hall','W Mattews Ave',('W Oregon St','W Mattews Ave'),25,'S',('W Illinois St','W Mattews Ave'),205,'N')
-x.add_building('School of Social Work','W Nevada St',('W Nevada St','S Gregory St'),40,'W',('W Nevada St','S Lincoln Ave'),160,'E')
-x.add_building('Spurlock Museum','S Gregory St',('W Oregon St','S Gregory St'),68,'S',('W Illinois St','S Gregory St'),162,'N')
-x.add_building('School of Social Work','W Nevada St',('W Nevada St','S Gregory St'),25,'W',('W Nevada St','S Lincoln Ave'),175,'E')
-x.add_building('School of Social Work','W Nevada St',('W Nevada St','S Gregory St'),70,'W',('W Nevada St','S Lincoln Ave'),130,'E')
 
 
 #'E Daniel St'
