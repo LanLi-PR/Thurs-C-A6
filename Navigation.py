@@ -3,13 +3,28 @@ import networkx as nx
 class Navigation():
 
     def __init__(self):
+        # Initiate an DiGraph.
         self.G = nx.DiGraph()
 
 
-    def add_building(self,building: str,street,node_1,node_1_distance,node_1_direction,node_2,node_2_distance,node_2_direction, On_inter = False):
-        # two way
+    def add_building(self,building: str,street,node_1,node_1_distance,node_1_direction,node_2,node_2_distance,node_2_direction):
+
+        """
+        Add the building to the map, and add the edge between the buildings and intersections automatically.
+        :param building: Building Name of the building.
+        :param street: Street name of the Street.
+        :param node_1: One of the two intersections of the street.
+        :param node_1_distance: The distance from building to node_1.
+        :param node_1_direction: The drection from building to node_1
+        :param node_2: The other intersection of the street.
+        :param node_2_distance: The distance from building to node_2.
+        :param node_2_direction: The drection from building to node_2
+        """
+        # Create node of building
         building_node = (building,street)
+        # Whether direction of node_1 to node_2 is available.
         if self.G.get_edge_data(node_1,node_2)!= None:
+            # Whether direction of node_2 to node_1 is available.
             if self.G.get_edge_data(node_2,node_1) != None:
                 self.add_edge(building_node,node_1,node_1_distance,node_1_direction,twoway = True)
                 self.add_edge(building_node,node_2,node_2_distance,node_2_direction,twoway = True)
@@ -20,17 +35,27 @@ class Navigation():
             if self.G.get_edge_data(node_2,node_1) != None:
                 self.add_edge(building_node,node_1,node_1_distance,node_1_direction, False)
                 self.add_edge(node_2,building_node,node_2_distance,node_1_direction, False)
-        # single way
+
 
 
     def add_edge(self,node_1,node_2,distance,direction: str,twoway = True):
+        """
+        Add the street to the DiGraph instance.
+
+        :param node_1:Intersection of the street, informed by two street names.
+        :param node_2: The other intersection of the street.
+        :param distance: The distance of the street.
+        :param direction: The drection from node_1 to node_2.
+        :param twoway: Whether the street two-way or one-way.
+        """
+        # Find the street name from the node_1 and node_2.
         for i in node_1:
             for j in node_2:
                 if i == j:
                     street_name = i
 
         self.G.add_edge(node_1,node_2,weight = distance, direct = direction, street = street_name)
-
+        # add the reverse direction of the street if the street is two way
         if twoway:
             if direction == 'S':
                 direction = 'N'
@@ -41,8 +66,8 @@ class Navigation():
             else:
                 direction = 'E'
             self.G.add_edge( node_2, node_1, weight = distance, direct = direction, street = street_name)
-#method to find the shortest way
 
+#method to find the shortest way
     def find_shortest_way(self):
         pass
 
