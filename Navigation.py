@@ -83,11 +83,11 @@ x.add_edge(('South Goodwin Ave', 'S Goodwin Ave'), ('W Nevada St', 'S Goodwin Av
 x.add_edge(('W Nevada St', 'S Lincoln Ave'), ('W Pennsylvania Ave', 'S Lincoln Ave'), 600, 'S')
 x.add_edge(('W Pennsylvania Ave', 'S Lincoln Ave'), ('W Pennsylvania Ave', 'S Dorner Dr'), 220, 'W')
 x.add_edge(('W Pennsylvania Ave', 'S Dorner Dr'), ('W Peabody Dr', 'S Dorner Dr'), 100, 'N')
-x.add_edge(('W Peabody Dr', 'S Dorner Dr'), ('University of illinois Armory', 'S 5th St','E Armory St'), 300, 'N')
-x.add_edge(('University of illinois Armory', 'S 5th St','E Armory St'), ('South Goodwin Ave', 'S Goodwin Ave'), 170, 'W')
+x.add_edge(('W Peabody Dr', 'S Dorner Dr'), ('Allen Hall and Unit One', 'S Dorner Dr','South Goodwin Ave'), 300, 'N')
+x.add_edge(('Allen Hall and Unit One', 'S Dorner Dr','South Goodwin Ave'), ('South Goodwin Ave', 'S Goodwin Ave'), 170, 'W')
 
 x.add_edge(('W Peabody Dr', 'S Dorner Dr'), ('W Peabody Dr', 'S Goodwin Ave'), 230, 'W')
-x.add_edge(('W Peabody Dr', 'S Goodwin Dr'), ('Funk Agricultural Constitute/Funk ACES', 'S Goodwin Ave'), 100, 'N')
+x.add_edge(('W Peabody Dr', 'S Goodwin Ave'), ('Funk Agricultural Constitute/Funk ACES', 'S Goodwin Ave'), 100, 'N')
 
 ##building:
 x.add_building('School of Information Sciences','E Daniel St',('E Daniel St', 'S 5th St'),30,'W',('E Daniel St', 'S 6th St'),110,'E')
@@ -102,6 +102,38 @@ x.add_building('Carl R. Woese Institute for Genomic Biology','W Gregory Dr',('W 
 x.add_building('Freer Hall','W Gregory Dr',('South Goodwin Ave','S Goodwin Ave'),140,'W',('South Goodwin Ave','S Dorner Dr'),30,'E')
 x.add_building('Mckinley Health Center','S Lincoln Ave',('W Nevada St','S Lincoln Ave'),400,'N',('W Pennsylvania Ave','S Lincoln Ave'),200,'S')
 
+x.add_edge(('W Nevada St','W Mattews Ave'),('W Nevada St','S Goodwin Ave'),140,'E')
+x.add_edge(('W Nevada St','S Goodwin Ave'),('W Nevada St','S Gregory St'),200,'E')
+x.add_edge(('W Nevada St','S Gregory St'),('W Nevada St','S Lincoln Ave'),200,'E')
+
+x.add_edge(('W Oregon St','S Goodwin Ave'),('W Oregon St','W Mattews Ave'),140,'W')
+x.add_edge(('W Oregon St','S Goodwin Ave'),('W Oregon St','S Gregory St'),200,'E')
+x.add_edge(('W Oregon St','S Gregory St'),('W Oregon St','S Lincoln Ave'),200,'E')
+
+x.add_edge(('W Illinois St','W Mattews Ave'),('W Illinois St','S Goodwin Ave'),140,'E')
+x.add_edge(('W Illinois St','S Goodwin Ave'),('W Illinois St','S Gregory St'),200,'E')
+x.add_edge(('W Illinois St','S Gregory St'),('W Illinois St','S Lincoln Ave'),200,'E')
+
+x.add_edge(('W Nevada St','W Mattews Ave'),('W Oregon St','W Mattews Ave'),110,'S')
+x.add_edge(('W Oregon St','W Mattews Ave'),('W Illinois St','W Mattews Ave'),230,'S')
+
+x.add_edge(('W Oregon St','S Goodwin Ave'),('W Nevada St','S Goodwin Ave'),110,'N')
+x.add_edge(('W Illinois St','S Goodwin Ave'),('W Oregon St','S Goodwin Ave'),230,'N')
+
+x.add_edge(('W Nevada St','S Gregory St'),('W Oregon St','S Gregory St'),110,'N')
+x.add_edge(('W Oregon St','S Gregory St'),('W Illinois St','S Gregory St'),230,'N')
+
+x.add_edge(('W Nevada St','S Lincoln Ave'),('W Oregon St','S Lincoln Ave'),110,'N')
+x.add_edge(('W Oregon St','S Lincoln Ave'),('W Illinois St','S Lincoln Ave'),230,'N')
+
+#add_building(self,building: str,street,node_1,node_1_distance,node_1_direction,node_2,node_2_direction,node_2_distance):
+x.add_building('Foreign Language Building','W Mattews Ave',('W Nevada St','W Mattews Ave'),40,'S',('W Oregon St','W Mattews Ave'),70,'N')
+x.add_building('Davenport Hall','W Mattews Ave',('W Oregon St','W Mattews Ave'),25,'S',('W Illinois St','W Mattews Ave'),205,'N')
+x.add_building('School of Social Work','W Nevada St',('W Nevada St','S Gregory St'),40,'W',('W Nevada St','S Lincoln Ave'),160,'E')
+x.add_building('Spurlock Museum','S Gregory St',('W Oregon St','S Gregory St'),68,'S',('W Illinois St','S Gregory St'),162,'N')
+x.add_building('School of Social Work','W Nevada St',('W Nevada St','S Gregory St'),25,'W',('W Nevada St','S Lincoln Ave'),175,'E')
+x.add_building('School of Social Work','W Nevada St',('W Nevada St','S Gregory St'),70,'W',('W Nevada St','S Lincoln Ave'),130,'E')
+
 
 #'E Daniel St'
 #'S 4th St'
@@ -111,26 +143,6 @@ x.add_building('Mckinley Health Center','S Lincoln Ave',('W Nevada St','S Lincol
 #'E Chamler St'
 #'E Armory St'
 #'E Gregory'
-ischool
-University of illinois Armory
-School of Art+Design
-Huff Hall
-English Building
-Lincoln Hall
-Davenport Hall
-Foreign Languages Building
-Undergraduate Library
-University of illinois Extension/Mumford Hall
-Funk Agricultural Constitute/Funk ACES
-Freer Hall
-School of Social Work
-Dance Studio
-Institute of Government and public Affairs
-Allen Hall and Unit One
-Mckinley Health Center
-UI Ice Arena
-Carl R. Woese Institute for Genomic Biology
-Spurlock Museum
 
 #def add_building(self, building: str, street, node_1, node_1_distance, node_1_direction, node_2, node_2_distance,node_2_direction):
 x.add_building('School of Information Sciences','E Daniel St',('E Daniel St', 'S 5th St'),30,'W',('E Daniel St', 'S 6th St'),110,'E')
