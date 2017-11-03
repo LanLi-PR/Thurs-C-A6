@@ -1,5 +1,4 @@
 
-
 class Node(object):
     """
     **meta is for dictionary for every node
@@ -66,7 +65,6 @@ class Graph:
         assert issubclass(edge_cls, Edge)
         self._node_cls = node_cls
         self._edge_cls = edge_cls
-        self.distances={}
 
     def node(self, name, **meta):
         """Create node if not exist, update node meta and get node."""
