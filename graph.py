@@ -1,5 +1,4 @@
 
-
 class Node(object):
     """
     **meta is for dictionary for every node
