@@ -9,6 +9,7 @@ class Navigation:
         """ construct an instance of networkx DiGraph class as the class Navigation attribute"""
         self.G = nx.DiGraph()
         self.Building2Node={}
+        self.Path2Edge={}
 
     def add_inter(self, intersection: list):
         """
@@ -26,10 +27,10 @@ class Navigation:
         :param street: Street name of the Street.
         :param node_1: One of the two intersections of the street.
         :param node_1_distance: The distance from building to node_1.
-        :param node_1_direction: The drection from building to node_1
+        :param node_1_direction: The direction from building to node_1
         :param node_2: The other intersection of the street.
         :param node_2_distance: The distance from building to node_2.
-        :param node_2_direction: The drection from building to node_2
+        :param node_2_direction: The direction from building to node_2
         """
         building_node=(building,street)
         """
@@ -71,10 +72,12 @@ class Navigation:
         :param twoway: default one-way
         :return: 
         """
+
         for i in from_:
             for j in to:
                 if i == j:
                     edge_name = i
+        # the node have two or more here, how to define to be "=="
 
         self.G.add_edge(from_, to, weight=distance, orientation=orientation, edge_name=edge_name)
         """
@@ -101,7 +104,28 @@ class Navigation:
         """
         src = self.Building2Node[source]
         dst = self.Building2Node[dest]
-        return nx.algorithms.shortest_paths.weighted.dijkstra_path(self.G,src,dst,weight='weight')
+        path2Node= nx.algorithms.shortest_paths.weighted.dijkstra_path(self.G,src,dst,weight='weight')
+        street=[]
+        orientation=[]
+        """
+        list out of range
+        street amount is one less than node;
+        can not put the i=0 into loop, because the next one haven't been calculated
+        """
+
+        street.append(self.G.get_edge_data(path2Node[0],path2Node[1])['edge_name'])
+        orientation.append(self.G.get_edge_data(path2Node[0], path2Node[1])['orientation'])
+        print("Starting on ", path2Node[0][1], "turn ", orientation[0])
+        """
+        attention here: the length should be two less 
+        because that the final node have no street/orientation
+        """
+        for i in range(1,len(path2Node)-1):
+            orientation.append(self.G.get_edge_data(path2Node[i],path2Node[i+1])['orientation'])
+            street.append(self.G.get_edge_data(path2Node[i],path2Node[i+1])['edge_name'])
+            if street[i]!=street[i-1]:
+                print("At",street[i],"turn ",orientation[i])
+        print("Processed until you arrive at ",dst[0])
 
 
 def main():
@@ -260,7 +284,7 @@ def main():
     stp = int(input(" Enter the mailing code your ending point"))
 
     print("Showing the shortest route from", building_code[str], "to", building_code[stp])
-    print(school_map.shorestPath(building_code[str],building_code[stp]))
+    school_map.shorestPath(building_code[str],building_code[stp])
 
 if __name__=='__main__':
     main()
