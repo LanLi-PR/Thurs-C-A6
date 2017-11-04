@@ -9,7 +9,6 @@ class Navigation:
         """ construct an instance of networkx DiGraph class as the class Navigation attribute"""
         self.G = nx.DiGraph()
         self.Building2Node={}
-        self.Path2Edge={}
 
     def add_inter(self, intersection: list):
         """
@@ -248,14 +247,9 @@ def main():
     school_map.add_building('Huff Hall', 'E Gregory Dr', ('E Gregory Dr', 'S 4th St'), 20, 'W', ('E Gregory Dr', 'S 6th St'),
                    250, 'E')
 
-
-    # print(school_map.G['E Daniel St', 'S 5th St']['School of Information Sciences', 'E Daniel St'])
-    # print(school_map.G['School of Information Sciences', 'E Daniel St']['E Daniel St', 'S 5th St'])
-    # print(school_map.G['School of Information Sciences', 'E Daniel St']['E Daniel St', 'S 6th St'])
-    # print(school_map.G['E Daniel St', 'S 6th St']['School of Information Sciences', 'E Daniel St'])
-    #
-    # print(list(school_map.G.nodes()))
-    # print(list(school_map.G.edges()))
+    """
+    input the map_code and put the parameter into the function
+    """
     building_code = {50: 'Allen Hall and Unit One',
                      195: 'Carl R. Woese Institute for Genomic Biology',
                      39: 'Dance Studio',
