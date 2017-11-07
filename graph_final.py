@@ -10,13 +10,7 @@ class Navigation:
         self.G = nx.DiGraph()
         self.Building2Node={}
 
-    def add_inter(self, intersection: list):
-        """
 
-        :param intersection: street intersection
-        :return: 
-        """
-        self.G.add_node(intersection)
 
     def add_building(self, building, street,node_1,node_1_distance,node_1_direction,node_2,node_2_distance,node_2_direction):
 
@@ -142,66 +136,72 @@ def main():
     # 'E Chamler St'
     # 'E Armory St'
     # 'E Gregory'
-
     school_map.add_edge(('E Daniel St', 'S 4th St'), ('E Daniel St', 'S 5th St'), 130, 'E', twoway=True)
     school_map.add_edge(('E Daniel St', 'S 5th St'), ('E Daniel St', 'S 6th St'), 140, 'E', twoway=True)
     school_map.add_edge(('E Daniel St', 'S 6th St'), ('E Daniel St', 'S Wright St'), 130, 'E')
+
     school_map.add_edge(('E Daniel St', 'S 4th St'), ('E Chamlers St', 'S 4th St'), 130, 'S', twoway=True)
     school_map.add_edge(('E Daniel St', 'S 5th St'), ('E Chamlers St', 'S 5th St'), 130, 'S', twoway=True)
     school_map.add_edge(('E Daniel St', 'S 6th St'), ('E Chamlers St', 'S 6th St'), 130, 'S')
     school_map.add_edge(('E Daniel St', 'S Wright St'), ('E Chamlers St', 'S Wright St'), 130, 'S', twoway=True)
+
     school_map.add_edge(('E Chamlers St', 'S 4th St'), ('E Chamlers St', 'S 5th St'), 130, 'E', twoway=True)
     school_map.add_edge(('E Chamlers St', 'S 5th St'), ('E Chamlers St', 'S 6th St'), 140, 'E', twoway=True)
     school_map.add_edge(('E Chamlers St', 'S Wright St'), ('E Chamlers St', 'S 6th St'), 110, 'W')
-    school_map.add_edge(('E Chamlers St', 'S 4th St'), ('E Armory St', 'S 4th St'), 160, 'S', twoway=True)
-    school_map.add_edge(('E Chamlers St', 'S 5th St'), ('University of illinois Armory', 'S 5th St', 'E Armory St'), 160, 'S', twoway=True)
-    school_map.add_edge(('E Chamlers St', 'S 6th St'), ('E Armory St', 'S 6th St'), 160, 'S')
-    school_map.add_edge(('E Armory St', 'S Wright St'), ('E Chamlers St', 'S Wright St'), 160, 'N')
 
-    school_map.add_edge(('E Armory St', 'S 4th St'), ('University of illinois Armory', 'S 5th St', 'E Armory St'), 130, 'E', twoway=True)
-    school_map.add_edge(('University of illinois Armory', 'S 5th St', 'E Armory St'), ('E Armory St', 'S 6th St'), 140, 'E', twoway=True)
-    school_map.add_edge(('E Armory St', 'S 6th St'), ('E Armory St', 'S Wright St'), 130, 'E')
+    school_map.add_edge(('E Chamlers St', 'S 4th St'), ('E Armory Ave', 'S 4th St'), 160, 'S', twoway=True)
+    school_map.add_edge(('E Chamlers St', 'S 5th St'), ('University of illinois Armory', 'S 5th St', 'E Armory Ave'), 160, 'S', twoway=True)
+    school_map.add_edge(('E Chamlers St', 'S 6th St'), ('E Armory Ave', 'S 6th St'), 160, 'S')
+    school_map.add_edge(('E Armory Ave', 'S Wright St'), ('E Chamlers St', 'S Wright St'), 160, 'N')
+
+    school_map.add_edge(('E Armory Ave', 'S 4th St'), ('University of illinois Armory', 'S 5th St', 'E Armory Ave'), 130, 'E', twoway=True)
+    school_map.add_edge(('University of illinois Armory', 'S 5th St', 'E Armory Ave'), ('E Armory Ave', 'S 6th St'), 140, 'E', twoway=True)
+    school_map.add_edge(('E Armory Ave', 'S 6th St'), ('E Armory Ave', 'S Wright St'), 130, 'E')
 
     school_map.add_edge(('E Armory St', 'S 4th St'), ('E Gregory Dr', 'S 4th St'), 140, 'S', twoway=True)
     school_map.add_edge(('E Armory St', 'S 6th St'), ('E Gregory Dr', 'S 6th St'), 140, 'S', twoway=True)
 
-    school_map.add_edge(('E Gregory Dr', 'S 4th St'), ('E Gregory Dr', 'S 6th St'), 270, 'E', twoway=True)
+    school_map.add_edge(('E Gregory Dr', 'S 4th St'), ('E Gregory Dr', 'S 6th St'), 280, 'E', twoway=True)
 
     school_map.add_edge(('E Gregory Dr', 'S 4th St'), ('E Peabody Dr', 'S 4th St'), 300, 'S', twoway=True)
     school_map.add_edge(('E Gregory Dr', 'S 6th St'), ('E Peabody Dr', 'S 6th St'), 300, 'S', twoway=True)
     school_map.add_edge(('E Peabody Dr', 'S 4th St'), ('E Peabody Dr', 'S 6th St'), 270, 'E', twoway=True)
 
-    school_map.add_edge(('W Gregory Dr', 'S 6th St'), ('W Gregory Dr', 'S Goodwin Ave'), 560, 'E', twoway=True)
+    school_map.add_edge(('E Gregory Dr', 'S 6th St'), ('E Gregory Dr', 'W Gregory Dr'), 130, 'E', twoway=True)
+    school_map.add_edge(('E Gregory Dr', 'W Gregory Dr'), ('W Gregory Dr', 'S Goodwin Ave'), 400, 'E', twoway=True)
 
-    school_map.add_edge(('South Goodwin Ave', 'S Goodwin Ave'), ('W Nevada St', 'S Goodwin Ave'), 200, 'N', twoway=True)
+    school_map.add_edge(('W Gregory Dr', 'S Goodwin Ave'), ('W Nevada St', 'S Goodwin Ave'), 200, 'N', twoway=True)
     school_map.add_edge(('W Nevada St', 'S Lincoln Ave'), ('W Pennsylvania Ave', 'S Lincoln Ave'), 600, 'S', twoway=True)
     school_map.add_edge(('W Pennsylvania Ave', 'S Lincoln Ave'), ('W Pennsylvania Ave', 'S Dorner Dr'), 220, 'W', twoway=True)
     school_map.add_edge(('W Pennsylvania Ave', 'S Dorner Dr'), ('W Peabody Dr', 'S Dorner Dr'), 100, 'N', twoway=True)
-    school_map.add_edge(('W Peabody Dr', 'S Dorner Dr'), ('Allen Hall and Unit One', 'S Dorner Dr', 'South Goodwin Ave'), 300,
+    school_map.add_edge(('W Peabody Dr', 'S Dorner Dr'), ('Allen Hall and Unit One', 'S Dorner Dr', 'S Goodwin Ave'), 300,
                'N', twoway=True)
 
-    school_map.add_edge(('Allen Hall and Unit One', 'S Dorner Dr', 'South Goodwin Ave'), ('South Goodwin Ave', 'S Goodwin Ave'),
+    school_map.add_edge(('Allen Hall and Unit One', 'S Dorner Dr', 'S Goodwin Ave'), ('W Gregory Dr', 'S Goodwin Ave'),
                170, 'W', twoway=True)
 
-    school_map.add_edge(('W Peabody Dr', 'S Dorner Dr'), ('W Peabody Dr', 'S Goodwin Ave'), 230, 'W', twoway=True)
-    school_map.add_edge(('W Peabody Dr', 'S Goodwin Ave'), ('Funk Agricultural Constitute/Funk ACES', 'S Goodwin Ave'), 100, 'N', twoway=True)
-    school_map.add_edge(('W Nevada St', 'W Mattews Ave'), ('W Nevada St', 'S Goodwin Ave'), 140, 'E', twoway=True)
+    school_map.add_edge(('W Peabody Dr', 'S Dorner Dr'), ('W Peabody Dr', 'South Goodwin Ave'), 230, 'W', twoway=True)
+    school_map.add_edge(('W Peabody Dr', 'South Goodwin Ave'), ('Funk Agricultural Constitute/Funk ACES', 'South Goodwin Ave'), 100, 'N', twoway=True)
+
+
+    school_map.add_edge(('W Nevada St', 'S Mathews Ave'), ('W Nevada St', 'S Goodwin Ave'), 140, 'E')
     school_map.add_edge(('W Nevada St', 'S Goodwin Ave'), ('W Nevada St', 'S Gregory St'), 200, 'E', twoway=True)
     school_map.add_edge(('W Nevada St', 'S Gregory St'), ('W Nevada St', 'S Lincoln Ave'), 200, 'E', twoway=True)
 
-    school_map.add_edge(('W Oregon St', 'S Goodwin Ave'), ('W Oregon St', 'W Mattews Ave'), 140, 'W', twoway=True)
+    school_map.add_edge(('W Oregon St', 'S Mathews Ave'), ('W Oregon St', 'S Goodwin Ave'), 140, 'E')
     school_map.add_edge(('W Oregon St', 'S Goodwin Ave'), ('W Oregon St', 'S Gregory St'), 200, 'E', twoway=True)
     school_map.add_edge(('W Oregon St', 'S Gregory St'), ('W Oregon St', 'S Lincoln Ave'), 200, 'E', twoway=True)
 
-    school_map.add_edge(('W Illinois St', 'W Mattews Ave'), ('W Illinois St', 'S Goodwin Ave'), 140, 'E', twoway=True)
+    school_map.add_edge(('W Illinois St', 'S Mathews Ave'), ('W Illinois St', 'S Goodwin Ave'), 200, 'E', twoway=True)
     school_map.add_edge(('W Illinois St', 'S Goodwin Ave'), ('W Illinois St', 'S Gregory St'), 200, 'E', twoway=True)
     school_map.add_edge(('W Illinois St', 'S Gregory St'), ('W Illinois St', 'S Lincoln Ave'), 200, 'E', twoway=True)
 
-    school_map.add_edge(('W Nevada St', 'W Mattews Ave'), ('W Oregon St', 'W Mattews Ave'), 110, 'S', twoway=True)
-    school_map.add_edge(('W Oregon St', 'W Mattews Ave'), ('W Illinois St', 'W Mattews Ave'), 230, 'S', twoway=True)
+    school_map.add_edge(('W Illinois St', 'S Mathews Ave'), ('W Oregon St', 'S Mathews Ave'), 200, 'S')
+    school_map.add_edge(('W Oregon St', 'S Mathews Ave'), ('W Nevada St', 'S Mathews Ave'), 110, 'S')
 
-    school_map.add_edge(('W Oregon St', 'S Goodwin Ave'), ('W Nevada St', 'S Goodwin Ave'), 110, 'N', twoway=True)
-    school_map.add_edge(('W Illinois St', 'S Goodwin Ave'), ('W Oregon St', 'S Goodwin Ave'), 230, 'N', twoway=True)
+
+    school_map.add_edge(('W Oregon St', 'S Goodwin Ave'), ('W Nevada St', 'S Goodwin Ave'), 110, 'S', twoway=True)
+    school_map.add_edge(('W Illinois St', 'S Goodwin Ave'), ('W Oregon St', 'S Goodwin Ave'), 230, 'S', twoway=True)
 
     school_map.add_edge(('W Nevada St', 'S Gregory St'), ('W Oregon St', 'S Gregory St'), 110, 'N', twoway=True)
     school_map.add_edge(('W Oregon St', 'S Gregory St'), ('W Illinois St', 'S Gregory St'), 230, 'N', twoway=True)
@@ -222,20 +222,23 @@ def main():
                    ('E Armory Ave', 'S 6th St'), 70, 'S')
     school_map.add_building('School of Art+Design', 'E Peabody Dr', ('E Peabody Dr', 'S 4th St'), 130, 'W',
                    ('E Peabody Dr', 'S 6th St'), 140, 'E')
-    school_map.add_building('Undergraduate Library', 'W Gregory Dr', ('W Gregory Dr', 'S 6th St'), 280, 'W',
-                   ('South Goodwin Ave', 'S Goodwin Ave'), 280, 'E')
-    school_map.add_building('University of illinois Extension/Mumford Hall', 'W Gregory Dr', ('W Gregory Dr', 'S 6th St'), 330,
-                   'W', ('South Goodwin Ave', 'S Goodwin Ave'), 230, 'E')
-    school_map.add_building('Carl R. Woese Institute for Genomic Biology', 'W Gregory Dr', ('W Gregory Dr', 'S 6th St'), 460,
-                   'W', ('South Goodwin Ave', 'S Goodwin Ave'), 100, 'E')
-    school_map.add_building('Freer Hall', 'W Gregory Dr', ('South Goodwin Ave', 'S Goodwin Ave'), 140, 'W',
-                   ('South Goodwin Ave', 'S Dorner Dr'), 30, 'E')
+
+    ######    school_map.add_edge(('E Gregory Dr', 'S 6th St'), ('E Gregory Dr', 'W Gregory Dr'), 130, 'E', twoway=True)
+    ######    school_map.add_edge(('E Gregory Dr', 'W Gregory Dr'), ('W Gregory Dr', 'S Goodwin Ave'), 400, 'E', twoway=True)
+    school_map.add_building('Undergraduate Library', 'W Gregory Dr', ('E Gregory Dr', 'W Gregory Dr'), 100, 'W',
+                   ('W Gregory Dr', 'S Goodwin Ave'), 300, 'E')
+    school_map.add_building('University of illinois Extension/Mumford Hall', 'W Gregory Dr', ('E Gregory Dr', 'W Gregory Dr'), 200,
+                   'W', ('W Gregory Dr', 'S Goodwin Ave'), 200, 'E')
+    school_map.add_building('Carl R. Woese Institute for Genomic Biology', 'W Gregory Dr', ('E Gregory Dr', 'W Gregory Dr'), 300,
+                   'W', ('W Gregory Dr', 'S Goodwin Ave'), 100, 'E')
+    school_map.add_building('Freer Hall', 'W Gregory Dr', ('W Gregory Dr', 'S Goodwin Ave'), 140, 'W',
+                   ('W Gregory Dr', 'S Dorner Dr'), 30, 'E')
     school_map.add_building('Mckinley Health Center', 'S Lincoln Ave', ('W Nevada St', 'S Lincoln Ave'), 400, 'N',
                    ('W Pennsylvania Ave', 'S Lincoln Ave'), 200, 'S')
-    school_map.add_building('Foreign Language Building', 'W Mattews Ave', ('W Nevada St', 'W Mattews Ave'), 40, 'S',
-                   ('W Oregon St', 'W Mattews Ave'), 70, 'N')
-    school_map.add_building('Davenport Hall', 'W Mattews Ave', ('W Oregon St', 'W Mattews Ave'), 25, 'S',
-                   ('W Illinois St', 'W Mattews Ave'), 205, 'N')
+    school_map.add_building('Foreign Language Building', 'S Mathews Ave', ('W Nevada St', 'S Mathews Ave'), 40, 'S',
+                   ('W Oregon St', 'S Mathews Ave'), 70, 'N')
+    school_map.add_building('Davenport Hall', 'S Mathews Ave', ('W Oregon St', 'S Mathews Ave'), 25, 'S',
+                   ('W Illinois St', 'S Mathews Ave'), 205, 'N')
     school_map.add_building('School of Social Work', 'W Nevada St', ('W Nevada St', 'S Gregory St'), 40, 'W',
                    ('W Nevada St', 'S Lincoln Ave'), 160, 'E')
     school_map.add_building('Spurlock Museum', 'S Gregory St', ('W Oregon St', 'S Gregory St'), 68, 'S',
@@ -246,7 +249,6 @@ def main():
                    ('W Nevada St', 'S Lincoln Ave'), 130, 'E')
     school_map.add_building('Huff Hall', 'E Gregory Dr', ('E Gregory Dr', 'S 4th St'), 20, 'W', ('E Gregory Dr', 'S 6th St'),
                    250, 'E')
-
     """
     input the map_code and put the parameter into the function
     """
@@ -271,6 +273,7 @@ def main():
                      710: 'University of illinois Extension/Mumford Hall',
                      493: 'ischool'}
 
+
     for i in building_code:
         print(i, building_code[i])
 
@@ -281,4 +284,4 @@ def main():
     school_map.shorestPath(building_code[str],building_code[stp])
 
 if __name__=='__main__':
-    main()
+        main()
