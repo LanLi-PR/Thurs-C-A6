@@ -150,40 +150,18 @@ def main():
     school_map.add_edge(('E Chamlers St', 'S Wright St'), ('E Chamlers St', 'S 6th St'), 110, 'W')
 
     school_map.add_edge(('E Chamlers St', 'S 4th St'), ('E Armory Ave', 'S 4th St'), 160, 'S', twoway=True)
-    school_map.add_edge(('E Chamlers St', 'S 5th St'), ('University of illinois Armory', 'S 5th St', 'E Armory Ave'), 160, 'S', twoway=True)
+    school_map.add_edge(('E Chamlers St', 'S 5th St'), ('S 5th St', 'E Armory Ave'), 160, 'S', twoway=True)
     school_map.add_edge(('E Chamlers St', 'S 6th St'), ('E Armory Ave', 'S 6th St'), 160, 'S')
     school_map.add_edge(('E Armory Ave', 'S Wright St'), ('E Chamlers St', 'S Wright St'), 160, 'N')
 
-    school_map.add_edge(('E Armory Ave', 'S 4th St'), ('University of illinois Armory', 'S 5th St', 'E Armory Ave'), 130, 'E', twoway=True)
-    school_map.add_edge(('University of illinois Armory', 'S 5th St', 'E Armory Ave'), ('E Armory Ave', 'S 6th St'), 140, 'E', twoway=True)
+    school_map.add_edge(('E Armory Ave', 'S 4th St'), ('E Armory Ave', 'S 5th St'), 130, 'E', twoway=True)
+    school_map.add_edge(('E Armory Ave', 'S 5th St'), ('E Armory Ave', 'S 6th St'), 140, 'E', twoway=True)
     school_map.add_edge(('E Armory Ave', 'S 6th St'), ('E Armory Ave', 'S Wright St'), 130, 'E')
 
     school_map.add_edge(('E Armory St', 'S 4th St'), ('E Gregory Dr', 'S 4th St'), 140, 'S', twoway=True)
     school_map.add_edge(('E Armory St', 'S 6th St'), ('E Gregory Dr', 'S 6th St'), 140, 'S', twoway=True)
 
-    school_map.add_edge(('E Gregory Dr', 'S 4th St'), ('E Gregory Dr', 'S 6th St'), 280, 'E', twoway=True)
-
-    school_map.add_edge(('E Gregory Dr', 'S 4th St'), ('E Peabody Dr', 'S 4th St'), 300, 'S', twoway=True)
-    school_map.add_edge(('E Gregory Dr', 'S 6th St'), ('E Peabody Dr', 'S 6th St'), 300, 'S', twoway=True)
-    school_map.add_edge(('E Peabody Dr', 'S 4th St'), ('E Peabody Dr', 'S 6th St'), 270, 'E', twoway=True)
-
-    school_map.add_edge(('E Gregory Dr', 'S 6th St'), ('E Gregory Dr', 'W Gregory Dr'), 130, 'E', twoway=True)
-    school_map.add_edge(('E Gregory Dr', 'W Gregory Dr'), ('W Gregory Dr', 'S Goodwin Ave'), 400, 'E', twoway=True)
-
-    school_map.add_edge(('W Gregory Dr', 'S Goodwin Ave'), ('W Nevada St', 'S Goodwin Ave'), 200, 'N', twoway=True)
-    school_map.add_edge(('W Nevada St', 'S Lincoln Ave'), ('W Pennsylvania Ave', 'S Lincoln Ave'), 600, 'S', twoway=True)
-    school_map.add_edge(('W Pennsylvania Ave', 'S Lincoln Ave'), ('W Pennsylvania Ave', 'S Dorner Dr'), 220, 'W', twoway=True)
-    school_map.add_edge(('W Pennsylvania Ave', 'S Dorner Dr'), ('W Peabody Dr', 'S Dorner Dr'), 100, 'N', twoway=True)
-    school_map.add_edge(('W Peabody Dr', 'S Dorner Dr'), ('Allen Hall and Unit One', 'S Dorner Dr', 'S Goodwin Ave'), 300,
-               'N', twoway=True)
-
-    school_map.add_edge(('Allen Hall and Unit One', 'S Dorner Dr', 'S Goodwin Ave'), ('W Gregory Dr', 'S Goodwin Ave'),
-               170, 'W', twoway=True)
-
-    school_map.add_edge(('W Peabody Dr', 'S Dorner Dr'), ('W Peabody Dr', 'South Goodwin Ave'), 230, 'W', twoway=True)
-    school_map.add_edge(('W Peabody Dr', 'South Goodwin Ave'), ('Funk Agricultural Constitute/Funk ACES', 'South Goodwin Ave'), 100, 'N', twoway=True)
-
-
+    #school_map.add_edge(('W Peabody Dr', 'South Goodwin Ave'), ('Funk Agricultural Constitute/Funk ACES', 'South Goodwin Ave'), 100, 'N', twoway=True)
     school_map.add_edge(('W Nevada St', 'S Mathews Ave'), ('W Nevada St', 'S Goodwin Ave'), 140, 'E')
     school_map.add_edge(('W Nevada St', 'S Goodwin Ave'), ('W Nevada St', 'S Gregory St'), 200, 'E', twoway=True)
     school_map.add_edge(('W Nevada St', 'S Gregory St'), ('W Nevada St', 'S Lincoln Ave'), 200, 'E', twoway=True)
@@ -210,6 +188,27 @@ def main():
     school_map.add_edge(('W Oregon St', 'S Lincoln Ave'), ('W Illinois St', 'S Lincoln Ave'), 230, 'N', twoway=True)
 
 
+    school_map.add_edge(('E Gregory Dr', 'S 4th St'), ('E Gregory Dr', 'S 6th St'), 280, 'E', twoway=True)
+
+    school_map.add_edge(('E Gregory Dr', 'S 4th St'), ('E Peabody Dr', 'S 4th St'), 300, 'S', twoway=True)
+    school_map.add_edge(('E Gregory Dr', 'S 6th St'), ('E Peabody Dr', 'S 6th St'), 300, 'S', twoway=True)
+    school_map.add_edge(('E Peabody Dr', 'S 4th St'), ('E Peabody Dr', 'S 6th St'), 270, 'E', twoway=True)
+
+    school_map.add_edge(('E Gregory Dr', 'S 6th St'), ('E Gregory Dr', 'W Gregory Dr'), 130, 'E', twoway=True)
+    school_map.add_edge(('E Gregory Dr', 'W Gregory Dr'), ('W Gregory Dr', 'S Goodwin Ave'), 400, 'E', twoway=True)
+
+    school_map.add_edge(('W Gregory Dr', 'S Goodwin Ave'), ('W Nevada St', 'S Goodwin Ave'), 200, 'N', twoway=True)
+    school_map.add_edge(('W Nevada St', 'S Lincoln Ave'), ('W Pennsylvania Ave', 'S Lincoln Ave'), 600, 'S', twoway=True)
+    school_map.add_edge(('W Pennsylvania Ave', 'S Lincoln Ave'), ('W Pennsylvania Ave', 'S Dorner Dr'), 220, 'W', twoway=True)
+    school_map.add_edge(('W Pennsylvania Ave', 'S Dorner Dr'), ('W Peabody Dr', 'S Dorner Dr'), 100, 'N', twoway=True)
+    school_map.add_edge(('W Peabody Dr', 'S Dorner Dr'), ('Allen Hall and Unit One', 'S Dorner Dr', 'W Gregory Dr'), 300,
+               'N', twoway=True)
+
+    school_map.add_edge(('W Gregory Dr','S Dorner Dr'), ('W Gregory Dr', 'S Goodwin Ave'),170, 'W', twoway=True)
+
+    school_map.add_edge(('W Peabody Dr', 'S Dorner Dr'), ('W Peabody Dr', 'South Goodwin Ave'), 230, 'W', twoway=True)
+
+
     ##building:
     school_map.add_building('ischool','E Daniel St',('E Daniel St', 'S 5th St'),30,'W',('E Daniel St', 'S 6th St'),110,'E')
     school_map.add_building('English Building', 'S Wright St', ('E Daniel St', 'S Wright St'), 30, 'N',
@@ -222,9 +221,6 @@ def main():
                    ('E Armory Ave', 'S 6th St'), 70, 'S')
     school_map.add_building('School of Art+Design', 'E Peabody Dr', ('E Peabody Dr', 'S 4th St'), 130, 'W',
                    ('E Peabody Dr', 'S 6th St'), 140, 'E')
-
-    ######    school_map.add_edge(('E Gregory Dr', 'S 6th St'), ('E Gregory Dr', 'W Gregory Dr'), 130, 'E', twoway=True)
-    ######    school_map.add_edge(('E Gregory Dr', 'W Gregory Dr'), ('W Gregory Dr', 'S Goodwin Ave'), 400, 'E', twoway=True)
     school_map.add_building('Undergraduate Library', 'W Gregory Dr', ('E Gregory Dr', 'W Gregory Dr'), 100, 'W',
                    ('W Gregory Dr', 'S Goodwin Ave'), 300, 'E')
     school_map.add_building('University of illinois Extension/Mumford Hall', 'W Gregory Dr', ('E Gregory Dr', 'W Gregory Dr'), 200,
@@ -235,7 +231,7 @@ def main():
                    ('W Gregory Dr', 'S Dorner Dr'), 30, 'E')
     school_map.add_building('Mckinley Health Center', 'S Lincoln Ave', ('W Nevada St', 'S Lincoln Ave'), 400, 'N',
                    ('W Pennsylvania Ave', 'S Lincoln Ave'), 200, 'S')
-    school_map.add_building('Foreign Language Building', 'S Mathews Ave', ('W Nevada St', 'S Mathews Ave'), 40, 'S',
+    school_map.add_building('Foreign Languages Building', 'S Mathews Ave', ('W Nevada St', 'S Mathews Ave'), 40, 'S',
                    ('W Oregon St', 'S Mathews Ave'), 70, 'N')
     school_map.add_building('Davenport Hall', 'S Mathews Ave', ('W Oregon St', 'S Mathews Ave'), 25, 'S',
                    ('W Illinois St', 'S Mathews Ave'), 205, 'N')
@@ -249,6 +245,8 @@ def main():
                    ('W Nevada St', 'S Lincoln Ave'), 130, 'E')
     school_map.add_building('Huff Hall', 'E Gregory Dr', ('E Gregory Dr', 'S 4th St'), 20, 'W', ('E Gregory Dr', 'S 6th St'),
                    250, 'E')
+    school_map.add_building('University of illinois Armory', 'E Armory Ave',('E Armory Ave', 'S 4th St'),125,'W',('S 5th St', 'E Armory Ave'),5,'E')
+    school_map.add_building('Allen Hall and Unit One','W Gregory Dr',('W Gregory Dr', 'S Dorner Dr'),5,'E',('W Gregory Dr', 'S Goodwin Ave'),165,'W')
     """
     input the map_code and put the parameter into the function
     """
@@ -259,7 +257,7 @@ def main():
                      718: 'English Building',
                      162: 'Foreign Languages Building',
                      52: 'Freer Hall',
-                     631: 'Funk Agricultural Constitute/Funk ACES',
+                     #631: 'Funk Agricultural Constitute/Funk ACES',
                      584: 'Huff Hall',
                      36: 'Institute of Government and public Affairs',
                      456: 'Lincoln Hall',
