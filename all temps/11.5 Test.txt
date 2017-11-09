@@ -1,0 +1,7 @@
+﻿11.5 Test case & Problems
+1 When building becomes intersection, would occur KeyError.
+   Testcase: 526 University of illinois Armory
+
+2 From building in right area to building in left area, will return “not reachable
+    May need re-define the dijkstra_path algorithm in Networkx.
+    Test case: Foreign Language Building —> UI Ice Arena
