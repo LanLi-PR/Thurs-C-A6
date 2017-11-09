@@ -8,9 +8,10 @@ class Input_Output():
 
     str = int(input(" Enter the mailing code your starting point"))
     stp = int(input(" Enter the mailing code your starting point"))
-
-    print("Showing the shortest route from", building_code[str],"to",  building_code[stp])
-
-
+    try:
+        print("Showing the shortest route from", building_code[str],"to",  building_code[stp])
+    except Exception as KeyError:
+        print("Incorrect Mailing codes")
+         
 if __name__ == "__main__":
     Input_Output()
