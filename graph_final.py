@@ -262,7 +262,11 @@ def main():
         str = int(str)
         stp = int(stp)
         # Find and print out the shortest path.
-        print("Showing the shortest route from", building_code[str], "to", building_code[stp])
+        try:
+        print("Showing the shortest route from", building_code[str],"to",  building_code[stp])
+        except Exception as KeyError:
+        print("Incorrect Mailing codes")
+        #print("Showing the shortest route from", building_code[str], "to", building_code[stp])
         school_map.shorestPath(building_code[str],building_code[stp])
         print("*********************************************************")
 
