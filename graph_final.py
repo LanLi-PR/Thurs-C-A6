@@ -224,50 +224,54 @@ def main():
     school_map.add_building('Allen Hall and Unit One','W Gregory Dr',('W Gregory Dr', 'S Dorner Dr'),5,'E',('W Gregory Dr', 'S Goodwin Ave'),165,'W')
     school_map.add_building('Office of the Registrar', 'S Gregory St', ('W Oregon St', 'S Gregory St'), 170, 'S',('W Illinois St', 'S Gregory St'), 50, 'N')
 
-    response = True
-    while response:
-            #input the map_code and put the parameter into the function
-            building_code = {50: 'Allen Hall and Unit One',
-                             195: 'Carl R. Woese Institute for Genomic Biology',
-                             39: 'Dance Studio',
-                             151: 'Davenport Hall',
-                             718: 'English Building',
-                             162: 'Foreign Languages Building',
-                             52: 'Freer Hall',
-                             #631: 'Funk Agricultural Constitute/Funk ACES',
-                             584: 'Huff Hall',
-                             36: 'Institute of Government and public Affairs',
-                             456: 'Lincoln Hall',
-                             26: 'Mckinley Health Center',
-                             590: 'School of Art+Design',
-                             37: 'School of Social Work',
-                             65: 'Spurlock Museum',
-                             525: 'UI Ice Arena',
-                             522: 'Undergraduate Library',
-                             526: 'University of illinois Armory',
-                             710: 'University of illinois Extension/Mumford Hall',
-                             493: 'ischool',
-                             612:'Office of the Registrar'}
 
-            # print out the building information.
-            for i in building_code:
-                print(i, building_code[i])
+    #input the map_code and put the parameter into the function
+    print("*********************************************************")
+    building_code = {50: 'Allen Hall and Unit One',
+                     195: 'Carl R. Woese Institute for Genomic Biology',
+                     39: 'Dance Studio',
+                     151: 'Davenport Hall',
+                     718: 'English Building',
+                     162: 'Foreign Languages Building',
+                     52: 'Freer Hall',
+                     584: 'Huff Hall',
+                     36: 'Institute of Government and public Affairs',
+                     456: 'Lincoln Hall',
+                     26: 'Mckinley Health Center',
+                     590: 'School of Art+Design',
+                     37: 'School of Social Work',
+                     65: 'Spurlock Museum',
+                     525: 'UI Ice Arena',
+                     522: 'Undergraduate Library',
+                     526: 'University of illinois Armory',
+                     710: 'University of illinois Extension/Mumford Hall',
+                     493: 'ischool',
+                     612:'Office of the Registrar'}
 
-            # Filter two zip codes.
-            str,stp = input(" Enter starting and ending mail codes: ").split()
-            str = int(str)
-            stp = int(stp)
-            # Find and print out the shortest path.
-            print("Showing the shortest route from", building_code[str], "to", building_code[stp])
-            school_map.shorestPath(building_code[str],building_code[stp])
-            response = False
-            response = input("Continue or Quit? Enter Y if continue and N to quit")
-            if response == 'Y':
-                response = True
-            else:
-                response = False
+    # print out the building information.
+    for i in building_code:
+        print(i, building_code[i])
+    print("*********************************************************")
 
-    print('Finish!')
+
+    #response = 1
+    #while response == 1:
+    while True:
+        # Filter two mail codes.
+        str,stp = input(" Enter starting and ending mail codes: ").split()
+        str = int(str)
+        stp = int(stp)
+        # Find and print out the shortest path.
+        print("Showing the shortest route from", building_code[str], "to", building_code[stp])
+        school_map.shorestPath(building_code[str],building_code[stp])
+        print("*********************************************************")
+
+
+        temp = input("Continue or Quit? Enter 1 if continue and 0 to quit")
+        response = int(temp)
+        if response == 0:
+            print("Done!")
+            break
 
 if __name__=='__main__':
         main()
